@@ -4,12 +4,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
-  <script src="checkLogin.js" defer></script>
+  <script src="path/to/hashed/checkLogin.js" integrity="sha384-HASH-HERE"></script>
 </head>
 <body>
   <center>
   <h3>Register Here</h3>
-  <form action="" method="post" onsubmit="return checkLogin();">
+  <form onsubmit="return checkLogin();" method="post">
       <table>
         <tr>
           <td>Username:</td>
@@ -21,7 +21,7 @@
         </tr>
         <tr>
           <td><button type="submit" class="button">Submit</button></td>
-          <td><p>Already a user? <a href="https://cbjaquez.github.io/index.html">Login Here</a></p></td>
+           <td><p>Already a user? <a href="https://cbjaquez.github.io/index.html">Login Here</a></p></td>
         </tr>
       </table>
   </form>
