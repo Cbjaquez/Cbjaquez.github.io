@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (username === "Layne" && password === "111111") {
       message.innerHTML = "Correct username and password!! the flag is BST{BR_U73_F0RC3}";
+      window.location = "?user=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
     } else {
       message.innerHTML = "Incorrect username and/or password";
     }
