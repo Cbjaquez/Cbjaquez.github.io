@@ -6,15 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
     var message = document.getElementById("message");
     var formData = new FormData(event.target);
 
-     var queryStr = "user=" + encodeURIComponent(username) + "&pass=" + encodeURIComponent(password);
-    
     if (username === "Layne" && password === "111111") {
-      // Redirect to success page and display success message
       window.location.href = "success.html?status=success";
     } else {
-      // Redirect to error page and display error message
-      var message = "Incorrect username and/or password";
-      queryStr += "&message=" + encodeURIComponent(message);
+      var query = "?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
+      window.history.pushState({}, "", window.location.pathname + query);
+      message.innerHTML = "Incorrect username and/or password";
     }
   });
 });
