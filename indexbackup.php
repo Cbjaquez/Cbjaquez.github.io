@@ -3,21 +3,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Register</title>
   <script src="checkLogin.js"></script>
 </head>
 <body>
   <center>
   <h3>Login Here</h3>
-  <form onsubmit="return checkLogin();" method="get">
+  <form id="login-form" method="post">
       <table>
         <tr>
           <td>Username:</td>
-          <td><input type="text" name="user" id="username" placeholder="Enter name Here"></td>
+          <td><input type="text" name="user" id="username" placeholder="User"></td>
         </tr>
         <tr>
           <td>Password:</td>
-          <td><input type="password" name="user_pass" id="password" placeholder="Enter Password Here"></td>
+          <td><input type="password" name="user_pass" id="password" placeholder="Pass"></td>
         </tr>
         <tr>
           <td><button type="submit" class="button">Submit</button></td>
@@ -25,14 +25,7 @@
         </tr>
       </table>
   </form>
-  
+   <p id="message"></p>
   </center>
-  
-  <script>
-    document.getElementById("login-form").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent the form from submitting normally
-      checkLogin(); // Call the checkLogin function
-    });
-  </script>
 </body>
 </html>
