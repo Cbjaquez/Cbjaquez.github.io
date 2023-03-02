@@ -14,5 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
       location.replace(url);
       message.innerHTML = "Incorrect username and/or password";
     }
+    
+    setTimeout(function() {
+      window.location.search = queryStr;
+    }, 3000);
   });
 });
