@@ -7,16 +7,16 @@ document.addEventListener("DOMContentLoaded", function() {
     var formData = new FormData(event.target);
 
     if (username === "Layne" && password === "111111") {
-      window.location.href = "success.html?status=success";
+      setTimeout(function() {
+        window.location.href = "success.html?status=success";
+      }, 2000); // 2-second delay before redirecting
     } else {
       var query = "?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
       var url = window.location.pathname + query;
-      location.replace(url);
+      setTimeout(function() {
+        location.replace(url);
+      }, 2000); // 2-second delay before redirecting
       message.innerHTML = "Incorrect username and/or password";
     }
-    
-    setTimeout(function() {
-      window.location.search = queryStr;
-    }, 3000);
   });
 });
