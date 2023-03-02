@@ -7,12 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var formData = new FormData(event.target);
 
     if (username === "Layne" && password === "111111") {
-      var flag = "BST{BR_U73_F0RC3}";
-      queryStr += "&flag=" + encodeURIComponent(flag);
-      message.innerHTML = "Correct username and password!! the flag is " + flag;
+      // Redirect to success page and display success message
+      window.location.href = "success.html?status=success";
     } else {
-      message.innerHTML = "Incorrect username and/or password";
+      // Redirect to error page and display error message
+      window.location.href = "error.html?status=error";
     }
-    var queryStr = "user=" + encodeURIComponent(username) + "&pass=" + encodeURIComponent(password);
   });
 });
