@@ -4,25 +4,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
-  <script>
-    function checkLogin() {
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-      
-      if (username === "Layne" && password === "111111") {
-        document.getElementById("result").innerHTML = "Correct username and password!! the flag is BST{BR_U73_F0RC3}";
-        return true;
-      } else {
-        document.getElementById("result").innerHTML = "Incorrect username and/or password";
-        return false;
-      }
-    }
-  </script>
 </head>
 <body>
   <center>
-    <h3>Login Here</h3>
-    <form onsubmit="return checkLogin();">
+  <h3>Login Here</h3>
+  <form id="login-form">
       <table>
         <tr>
           <td>Username:</td>
@@ -34,11 +20,15 @@
         </tr>
         <tr>
           <td><button type="submit" class="button">Submit</button></td>
-          <td><p>Not yet registered? <a href="https://cbjaquez.github.io/register.html">Register Here</a></p></td>
+           <td><p>Not yet registered? <a href="https://cbjaquez.github.io/register.html">Register Here</a></p></td>
         </tr>
       </table>
-    </form>
-    <div id="result"></div>
+  </form>
+  
   </center>
+  
+  <p id="message"></p>
+
+  <script src="main/checkLogin.js"></script>
 </body>
 </html>
