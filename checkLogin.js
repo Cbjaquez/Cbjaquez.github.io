@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var formData = new FormData(event.target);
 
     if (username === "Layne" && password === "111111") {
-      window.location.href = "index.html?username=Layne&password=111111";
+      window.location.href = "index.html?username=Layne&password=111111"
+      message.innerHTML = "Good Job! The flag is: BST{BR_U73_F0RC3}";;
     } else {
       var query = "?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
       var url = window.location.pathname + query;
