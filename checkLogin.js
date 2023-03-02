@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
       window.location.href = "success.html?status=success";
     } else {
       // Redirect to error page and display error message
-      window.location.href = "error.html?status=error";
-      window.location.href - "index.html"
+      var message = "Incorrect username and/or password";
       queryStr += "&message=" + encodeURIComponent(message);
     }
   });
