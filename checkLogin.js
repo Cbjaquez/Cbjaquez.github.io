@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
       window.location.href = "success.html?status=success";
     } else {
       var query = "?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
-      window.history.pushState({}, "", window.location.pathname + query);
+      var url = window.location.pathname + query;
+      location.replace(url);
       message.innerHTML = "Incorrect username and/or password";
     }
   });
