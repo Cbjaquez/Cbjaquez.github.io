@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var formData = new FormData(event.target);
 
     if (username === "Layne" && password === "111111") {
-      setTimeout(function() {
-        window.location.href = "success.html?status=success";
-      }, 2000); // 2-second delay before redirecting
+      window.location.href = "success.html?status=success";
     } else {
       var query = "?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
       var url = window.location.pathname + query;
