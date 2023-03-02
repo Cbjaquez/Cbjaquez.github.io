@@ -1,3 +1,28 @@
-var encoded = "ZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcigiRE9NQ29udGVudExvYWRlZCIsIGZ1bmN0aW9uKCkgewogIC8vIGNoZWNrIGZvciBkaXJlY3QgaW5wdXQgb2YgY29ycmVjdCBjcmVkZW50aWFscyBpbiB0aGUgVVJMCiAgdmFyIHF1ZXJ5U3RyaW5nID0gd2luZG93LmxvY2F0aW9uLnNlYXJjaDsKICB2YXIgdXJsUGFyYW1zID0gbmV3IFVSTFNlYXJjaFBhcmFtcyhxdWVyeVN0cmluZyk7CiAgdmFyIHVzZXJuYW1lUGFyYW0gPSB1cmxQYXJhbXMuZ2V0KCJ1c2VybmFtZSIpOwogIHZhciBwYXNzd29yZFBhcmFtID0gdXJsUGFyYW1zLmdldCgicGFzc3dvcmQiKTsKICBpZiAodXNlcm5hbWVQYXJhbSA9PT0gIkxheW5lIiAmJiBwYXNzd29yZFBhcmFtID09PSAiMTExMTExIikgewogICAgd2luZG93LmxvY2F0aW9uLmhyZWYgPSAic3VjY2Vzcy5odG1sIjsKICB9CgogIC8vIGhhbmRsZSBmb3JtIHN1Ym1pc3Npb24KICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgibG9naW4tZm9ybSIpLmFkZEV2ZW50TGlzdGVuZXIoInN1Ym1pdCIsIGZ1bmN0aW9uKGV2ZW50KSB7CiAgICBldmVudC5wcmV2ZW50RGVmYXVsdCgpOwogICAgdmFyIHVzZXJuYW1lID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInVzZXJuYW1lIikudmFsdWU7CiAgICB2YXIgcGFzc3dvcmQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgicGFzc3dvcmQiKS52YWx1ZTsKICAgIHZhciBtZXNzYWdlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoIm1lc3NhZ2UiKTsKICAgIHZhciBmb3JtRGF0YSA9IG5ldyBGb3JtRGF0YShldmVudC50YXJnZXQpOwoKICAgIGlmICh1c2VybmFtZSA9PT0gIkxheW5lIiAmJiBwYXNzd29yZCA9PT0gIjExMTExMSIpIHsKICAgICAgd2luZG93LmxvY2F0aW9uLmhyZWYgPSAic3VjY2Vzcy5odG1sP3N0YXR1cz1zdWNjZXNzIjsKICAgIH0gZWxzZSB7CiAgICAgIHZhciBxdWVyeSA9ICI/dXNlcm5hbWU9IiArIGVuY29kZVVSSUNvbXBvbmVudCh1c2VybmFtZSkgKyAiJnBhc3N3b3JkPSIgKyBlbmNvZGVVUklDb21wb25lbnQocGFzc3dvcmQpOwogICAgICB2YXIgdXJsID0gd2luZG93LmxvY2F0aW9uLnBhdGhuYW1lICsgcXVlcnk7CiAgICAgIHNldFRpbWVvdXQoZnVuY3Rpb24oKSB7CiAgICAgICAgbG9jYXRpb24ucmVwbGFjZSh1cmwpOwogICAgICB9LCAyMDAwKTsgLy8gMi1zZWNvbmQgZGVsYXkgYmVmb3JlIHJlZGlyZWN0aW5nCiAgICAgIG1lc3NhZ2UuaW5uZXJIVE1MID0gIkluY29ycmVjdCB1c2VybmFtZSBhbmQvb3IgcGFzc3dvcmQiOwogICAgfQogIH0pOwp9KTs=";
-var code = atob(encoded);
-console.log(code);
+document.addEventListener("DOMContentLoaded", function() {
+  var queryString = window.location.search;
+  var urlParams = new URLSearchParams(queryString);
+  var usernameParam = urlParams.get("username");
+  var passwordParam = urlParams.get("password");
+  if (usernameParam === "Layne" && passwordParam === "111111") {
+    window.location.href = "success.html";
+  }
+
+  document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var message = document.getElementById("message");
+    var formData = new FormData(event.target);
+
+    if (username === "Layne" && password === "111111") {
+      window.location.href = "success.html?status=success";
+    } else {
+      var query = "?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password);
+      var url = window.location.pathname + query;
+      setTimeout(function() {
+        location.replace(url);
+      }, 2000); 
+      message.innerHTML = "Incorrect username and/or password";
+    }
+  });
+});
